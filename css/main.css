@@ -1,3 +1,7 @@
+a{
+	
+}
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7,8 +11,25 @@ body {
   background-color: #f0f0f0;
 }
 
+div.icons {
+    position: relative;
+}
+ 
+div.icons a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 10; /* Places the link above everything else in the div */
+    background-color: #FFF; /* Fix to make div clickable in IE */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+
 .wrapper {
-	width: 9em;
+	width: 8.5em;
 	margin: 10% 45% 0 45%;
 }
 
@@ -20,8 +41,15 @@ body {
 
 .icons:hover {
 	background-color: #fff;
+	 transition: all 750ms linear;
+  -webkit-animation:slide-up 750ms linear;
 }
 
 .names {
 	padding-left: 5%;
 }
+
+@-webkit-keyframes slide-up {
+    0%   {top: 100%;}
+    100% {top: 0%;}
+} 
